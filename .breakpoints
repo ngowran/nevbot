@@ -1,0 +1,20 @@
+{
+  "files": {
+    "Non-code-information/Supplementary": [
+      {
+        "id": "29628797-8d0c-4025-a4f6-19a7125110c7",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ],
+    "ignore.gitignore": [
+      {
+        "id": "6ea62b24-3283-4666-929c-83ce9e77a49c",
+        "line": 1,
+        "version": 29,
+        "index": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+Collection of important information.
+
+1. Discord gateway intents
+Gateway Intents were introduced by Discord, so bot developers can choose which events their bot receives based on which data it needs to function. Intents are named groups of predefined WebSocket events.
+
+
+2. Client 
+Represents a client connection that connects to Discord. This class is used to interact with the Discord WebSocket and API.
+
+A number of options can be passed to the Client.
+
+
+3. Cogs
+A collection of commands, listeners, and some state into one class. 
+
+Each cog is a Python class that subclasses commands.Cog.
+Every command is marked with the commands.command() decorator. 
+Every listener is marked with the commands.Cog.listener() decorator.
+Cogs are then registered with the Bot.add_cog() call.
+Cogs are subsequently removed with the Bot.remove_cog() call.
+
+Def - Decorator:
+A design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure.
+
+
+4. Commands
+Commands are defined by attaching it to a regular Python function.
+
+A command must always have at least one parameter, ctx, which is the Context.
+
+There are two ways of registering a command. The first one is by using Bot.command() decorator. The second is using the command() decorator followed by Bot.add_command().
+
+
+
+API documentation
+https://discordpy.readthedocs.io/en/stable/api.html
+
+Cogs documentation 
+https://discordpy.readthedocs.io/en/stable/ext/commands/cogs.html
+
+Commands documentation
+https://discordpy.readthedocs.io/en/stable/ext/commands/commands.html
