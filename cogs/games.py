@@ -35,6 +35,14 @@ class games(commands.Cog):
       await ctx.send("i lose :(")
     elif botans == "scissors" and arg == "paper":
       await ctx.send("i win :)")
+  
+
+  @commands.command(name="cflip", help="Flips a coin.")
+  async def cflip(self, ctx):
+    coin = ["heads", "tails"]
+    await ctx.send(f"the coin flipped to {random.choice(coin)}.")
+
+ # async def
 
 def setup(bot):
   bot.add_cog(games(bot))

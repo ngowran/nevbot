@@ -25,7 +25,9 @@ async def on_ready():
 @bot.event
 async def on_command_error(ctx, error):
   if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("Please enter a vaild argument.")
+    await ctx.send("Please enter a vaild argument :)")
+  elif isinstance(error, commands.CommandNotFound):
+    await ctx.send("Please enter a vaild command :)")
 
 # loads each cog class as a cog
 for filename in os.listdir("./cogs"):
