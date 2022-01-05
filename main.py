@@ -19,7 +19,7 @@ client = discord.Client()
 async def on_ready():
   channel = bot.get_channel(906333404033859587)
   await channel.send(random.choice(sentences))
-  await bot.change_presence(activity=discord.Game(name="Type !help to use me :wink:"))
+  await bot.change_presence(activity=discord.Game(name="Type !help to use me ;)"))
 
 # loads each cog class as a cog
 for filename in os.listdir("./cogs"):

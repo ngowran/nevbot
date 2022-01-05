@@ -10,11 +10,16 @@ class music(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 
-  @commands.command(name="test", help="test command")
-  async def test(self, ctx, arg):
-    await ctx.send(f"test {arg}")
-  
-  bot.add_command(test)
+
+  @commands.command(name="join", help="Make the bot join VC.")
+  async def join(self, ctx):
+    await ctx.author.voice.channel.connect()
+    await ctx.send("I'm here bitches")
+
+  @commands.command(name="leave", help="Make the bot leave VC.")
+  async def leave(self, ctx):
+    await ctx.voice_client.disconnect()
+    await ctx.send("Bye bitches") 
 
 #initalises the music cog
 def setup(bot):
