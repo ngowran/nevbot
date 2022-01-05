@@ -32,6 +32,7 @@ class greet(commands.Cog):
         await ctx.send("I haven't learned that language yet, sorry!!!")
     else:
       await ctx.send("Sorry you need to specify if you want a formal or informal greeting!") 
- 
+
+#initalises the greet cog
 def setup(bot):
   bot.add_cog(greet(bot))

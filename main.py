@@ -14,26 +14,19 @@ import Host
 bot = commands.Bot(command_prefix='!', intents=discord.Intents().all())
 client = discord.Client()
 
-#bot startup event actions
+# bot startup event actions
 @bot.event
 async def on_ready():
   channel = bot.get_channel(906333404033859587)
   await channel.send(random.choice(sentences))
-  await bot.change_presence(activity=discord.Game(name="Type !help to use me ;)"))
-
-#sends an error message when there is no argumgent passed into a command
-@bot.event
-async def on_command_error(ctx, error):
-  if isinstance(error, commands.MissingRequiredArgument):
-    await ctx.send("Please enter a vaild argument :)")
-  elif isinstance(error, commands.CommandNotFound):
-    await ctx.send("Please enter a vaild command :)")
+  await bot.change_presence(activity=discord.Game(name="Type !help to use me :wink:"))
 
 # loads each cog class as a cog
 for filename in os.listdir("./cogs"):
   if filename.endswith('.py'): 
     bot.load_extension(f"cogs.{filename[:-3]}")
 
+# uses the token to run the bot on the server
 Host.host()
 token = ""
 bot.run(token)

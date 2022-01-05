@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-sentences = ["bippity boppity. nevbot is on the property.", "hola! nevbot is here.", "nevbot is online! beep boop.", "skyne-- i mean nevbot.. is alive.", "yassss girlies i'm here."]
+sentences = ["bippity boppity. nevbot is on the property. :kissing_heart:", "hola! nevbot is here. :kissing_heart:", "nevbot is online! beep boop. :relaxed:", "skyne-- i mean nevbot.. is alive.", "yassss girlies i'm here. :heart_eyes:"]
 
 languages = ["French", "Spanish", "Russian", "Chinese", "Italian", "Japanese", "German", "Portuguese", "Korean", "Arabic", "Danish", "Swahili", "Greek", "Polish", "Indonesian", "Hindi", "Turkish", "Hebrew"]
 

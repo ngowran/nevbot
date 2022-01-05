@@ -2,7 +2,7 @@
 
 import discord
 from discord.ext import commands
-import youtube_dl
+#import youtube_dl
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents().all())
 
@@ -16,6 +16,6 @@ class music(commands.Cog):
   
   bot.add_command(test)
 
-
+#initalises the music cog
 def setup(bot):
   bot.add_cog(music(bot))
