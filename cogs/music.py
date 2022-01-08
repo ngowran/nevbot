@@ -14,7 +14,7 @@ class music(commands.Cog):
   @commands.command(name="join", help="Make the bot join VC.")
   async def join(self, ctx):
     await ctx.author.voice.channel.connect()
-    await ctx.send("I'm here bitches")
+    await ctx.send(f"hola. connected to: {channel}")
 
   @commands.command(name="leave", help="Make the bot leave VC.")
   async def leave(self, ctx):

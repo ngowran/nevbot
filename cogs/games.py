@@ -12,6 +12,7 @@ rsp = {
   "paper": True, 
   "scissors": True }
 
+
 class games(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
@@ -44,6 +45,7 @@ class games(commands.Cog):
     coin = ["heads", "tails"]
     await ctx.send(f"the coin flipped to {random.choice(coin)}.")
 
+ 
   @commands.command(name="hulkbust", help="Hulkbust.")
   async def hulkbust(self, ctx):
     await ctx.send(file=discord.File("Other/media/hulkbuster.gif", spoiler=False))
