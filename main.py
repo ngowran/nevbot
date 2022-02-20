@@ -17,7 +17,7 @@ client = discord.Client()
 # bot startup event actions
 @bot.event
 async def on_ready():
-  channel = bot.get_channel(906333404033859587)
+  channel = bot.get_channel(931949653283451004)
   await channel.send(random.choice(sentences))
   await bot.change_presence(activity=discord.Game(name="Type !help to use me ;)"))
 
