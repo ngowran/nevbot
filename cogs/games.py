@@ -4,6 +4,7 @@ import discord
 import random
 from discord.ext import commands
 
+
 bot = commands.Bot(command_prefix='!', intents=discord.Intents().all())
 
 #roshambo dictionary
@@ -49,6 +50,12 @@ class games(commands.Cog):
   @commands.command(name="hulkbust", help="Hulkbust.")
   async def hulkbust(self, ctx):
     await ctx.send(file=discord.File("Other/media/hulkbuster.gif", spoiler=False))
+
+  @commands.command(name="droll", help="Rolls a dice. Can also specify range of roll.")
+  async def droll(self, ctx, arg=6):
+      number = random.randint(1, arg)
+      await ctx.send(f"{ctx.message.author.mention} rolled: {number}")
+    
 
 
 #initalises the game cog
