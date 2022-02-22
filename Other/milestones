@@ -1,6 +1,10 @@
 30/12/2021 - Bot online for first time. First commands made. Niamh fixed showstopping problem -*bot run function call and host call were in the wrong places*.
 
 
-5/1/2021 - Bot joined voice channel for the first time thanks to Niamh Gowran. That ho.
+5/1/2021 - Bot joined voice channel for the first time thanks to Niamh Gowran.
 
 7/1/2021 - We made our first interactive bot command to allocate HOI teams. Juicy dynamic.
+
+21/2/2021 - Greatly improved HOI command - Now known as "teams" command. Done by Niamh, Alex and Kevin. Very good work.
+
+22/2/2021 - File cleanup and to do list created by Kevin.

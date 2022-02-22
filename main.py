@@ -2,9 +2,7 @@
 
 import discord
 import os
-#from discord import FFmpegPCMAudio
 from discord.ext import commands,tasks
-#from discord import TextChannel
 import random
 from Other.phrase import sentences
 import Host
@@ -28,5 +26,5 @@ for filename in os.listdir("./cogs"):
 
 # uses the token to run the bot on the server
 Host.host()
-token = ""
+token = "OTIyNDQ4NDkzMzIxMjgxNTM2.YcBnGw.ekcwQuzPK3zj1ESqLOQ3HfAm1tE"
 bot.run(token)
