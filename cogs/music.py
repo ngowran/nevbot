@@ -11,7 +11,7 @@ class music(commands.Cog):
         #all the music related stuff
         self.is_playing = False
         self.is_paused = False
-
+        self.curr_song = ""
         # 2d array containing [song, channel]
         self.music_queue = []
         self.YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
@@ -63,6 +63,7 @@ class music(commands.Cog):
             
             #remove the first element as you are currently playing it
             await ctx.send(f'Now playing: {self.music_queue[0][0]["title"]:s}.')
+            self.curr_song = self.music_queue[0][0]["title"]
             self.music_queue.pop(0)
 
             self.vc.play(discord.FFmpegPCMAudio(m_url, **self.FFMPEG_OPTIONS), after=lambda e: self.play_next())
@@ -108,7 +109,7 @@ class music(commands.Cog):
     @commands.command(name="skip", aliases=["s"], help="Skips the current song being played")
     async def skip(self, ctx):
         if self.vc != None and self.vc:
-            await ctx.send(f'Skipping: {self.music_queue[0][0]["title"]:s}.')
+            await ctx.send(f'Skipping: {self.curr_song:s}.')
             self.vc.stop()
             #try to play next in the queue if it exists
             await self.play_music(ctx)
@@ -120,7 +121,7 @@ class music(commands.Cog):
         for i in range(0, len(self.music_queue)):
             # display a max of 10 songs in the current queue
             if (i > 10): break
-            retval += f'[{i + 1:d}] - {self.music_queue[i][0]["title"]:s} \n'
+            retval += f'**[{i + 1:d}]** - {self.music_queue[i][0]["title"]:s} \n'
         if retval != "":
             await ctx.send(retval)
         else:

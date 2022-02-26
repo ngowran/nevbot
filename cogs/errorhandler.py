@@ -17,8 +17,8 @@ class ErrorHandler(commands.Cog):
       await ctx.send("Please enter a vaild command :)") 
     elif isinstance(error, commands.BadArgument):
       await ctx.send("Please enter an appropriate argument type :)")
-    else:
-      await ctx.send(f"{error}. Please try again :) {ctx.message.author.mention}.")
+    #else:
+      #await ctx.send(f"{error}. Please try again :) {ctx.message.author.mention}.")
 
 #initalises the error cog
 def setup(bot):
