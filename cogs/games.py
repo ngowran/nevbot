@@ -3,6 +3,7 @@
 import discord
 import random
 from discord.ext import commands
+import os
 
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents().all())
@@ -13,11 +14,12 @@ rsp = {
   "paper": True, 
   "scissors": True }
 
-
 class games(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
-  
+    self.keeper = ""
+    self.b_counter = 0
+
   @commands.command(name="roshambo", help="Plays Rock-Paper-Scissors with the user")
   async def roshambo(self, ctx, arg):
     botans = random.choice(list(rsp))
@@ -39,7 +41,7 @@ class games(commands.Cog):
       await ctx.send("i lose :(")
     elif botans == "scissors" and arg == "paper":
       await ctx.send("i win :)")
-  
+
 
   @commands.command(name="cflip", help="Flips a coin.")
   async def cflip(self, ctx):
@@ -56,7 +58,18 @@ class games(commands.Cog):
       number = random.randint(1, arg)
       await ctx.send(f"{ctx.message.author.mention} rolled: {number}")
     
+  @commands.command(name="gcode", help="Saves an inputed game code")
+  async def gcode(self, ctx, *arg):
+    if self.keeper:
+      await ctx.send(f"Your game code is: {self.keeper}")
+    else:
+      self.keeper = " ".join(arg)
+      await ctx.send(f"Your game code is: {self.keeper}")
 
+  @commands.command(name="rgcode", help="Resets the game code command")
+  async def rgcode(self, ctx):
+    self.keeper = ""
+    await ctx.send("Your game code is reset!!")
 
 #initalises the game cog
 def setup(bot):

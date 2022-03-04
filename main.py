@@ -2,7 +2,7 @@
 
 import discord
 import os
-from discord.ext import commands,tasks
+from discord.ext import commands
 import random
 from Other.phrase import sentences
 import Host
@@ -26,5 +26,5 @@ for filename in os.listdir("./cogs"):
 
 # uses the token to run the bot on the server
 Host.host()
-token = ""
+token = "OTIyNDQ4NDkzMzIxMjgxNTM2.YcBnGw.30ysz7Zpqh7xikybPzyo_rj27zg"
 bot.run(token)
