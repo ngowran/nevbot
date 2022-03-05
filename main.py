@@ -26,5 +26,5 @@ for filename in os.listdir("./cogs"):
 
 # uses the token to run the bot on the server
 Host.host()
-token = "OTIyNDQ4NDkzMzIxMjgxNTM2.YcBnGw.30ysz7Zpqh7xikybPzyo_rj27zg"
+token = ""
 bot.run(token)

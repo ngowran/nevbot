@@ -6,7 +6,7 @@ from Other.phrase import languages, ftranslate, itranslate
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents().all())
 
-class greet(commands.Cog):
+class chat(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
   
@@ -17,7 +17,15 @@ class greet(commands.Cog):
   @commands.command(name='repeat', help='Repeats a message')
   async def repeat(self, ctx, *args):
     await ctx.send(' '.join(args))
-  
+
+  @commands.has_any_role('administrator', 'admin')
+  @commands.command(name='purge', help="Deletes specified number of messages. Defaults to: 5")
+  async def purge(self, ctx, arg=None):
+    limit = 5 if arg is None else int(arg)
+    await ctx.channel.purge(limit=limit)
+    await ctx.send(f"purged {limit} messages")
+	
+
   @commands.command(name="greeting", help="Greets user in a language of their choice")
   async def greeting(self, ctx, *args):
     if len(args) < 2:
@@ -38,4 +46,4 @@ class greet(commands.Cog):
 
 #initalises the greet cog
 def setup(bot):
-  bot.add_cog(greet(bot))
+  bot.add_cog(chat(bot))
