@@ -19,8 +19,8 @@ class ErrorHandler(commands.Cog):
       await ctx.send("Please enter an appropriate argument type :)")
     elif isinstance(error, commands.MissingAnyRole):
       await ctx.send("Sorry, you don't have the correct permissions to do that! :)")
-    #else:
-      #wait ctx.send(f"{error}. Please try again :) {ctx.message.author.mention}.")
+    else:
+      await ctx.send(f"{error}. Please try again :) {ctx.message.author.mention}.")
 
 #initalises the error cog
 def setup(bot):
