@@ -143,12 +143,6 @@ class Casino(commands.Cog):
         await ctx.send(f"Dealer had {self.dealer_score}. You lose.")
         Casino.reset(self)
 
-  @commands.command(name="last_draw", aliases=["card", "lastd"], help="Shows second last card drawn [debug tool]")
-  async def last_draw(self, ctx):
-    if self.played > 0:
-      await ctx.send(f"Last card shown: {self.last_drawn}, {self.test}")
-    else:
-      await ctx.send(f"You haven't played yet you!")
 
 def setup(bot):
   bot.add_cog(Casino(bot))
