@@ -3,7 +3,7 @@ from threading import Thread
 
 app = Flask('')
 
-#returns a message in the terminal if the start up is sucessfu;
+#returns a message in the terminal if the start up is sucessful;
 @app.route('/')
 def main():
     return 'Beep boop. nevbot is alive.'

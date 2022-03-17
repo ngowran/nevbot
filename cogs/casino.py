@@ -63,7 +63,6 @@ class Casino(commands.Cog):
     self.count = 0
   
   def draw_card(self):
-    card_value = 0
     self.deck = [card for card in os.listdir("Other/media/cards") if card not in self.drawn_cards and card != "back.png"]
     card = random.choice(self.deck)
     tokens = card.strip(".png").split("_")
@@ -71,11 +70,14 @@ class Casino(commands.Cog):
       
     if card_value.isdigit():
       card_value = int(tokens[0])
-      self.count += card_value    
+      self.count += card_value
+      
     elif card in face_cards:
       self.count += 10
 
-    if card_value == 1 and self.count <= 10:
+    if card_value == 1 and self.count <= 11:
+      self.count += 10
+    elif self.last_drawn in aces and card_value == 10:
       self.count += 10
      
     self.dealer_score += random.choice(range(1, 11))
@@ -143,6 +145,6 @@ class Casino(commands.Cog):
         await ctx.send(f"Dealer had {self.dealer_score}. You lose.")
         Casino.reset(self)
 
-
+ 
 def setup(bot):
   bot.add_cog(Casino(bot))

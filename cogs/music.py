@@ -1,7 +1,5 @@
-from ast import alias
 import discord
 from discord.ext import commands
-
 from youtube_dl import YoutubeDL
 
 class music(commands.Cog):
@@ -14,7 +12,7 @@ class music(commands.Cog):
         self.curr_song = ""
         # 2d array containing [song, channel]
         self.music_queue = []
-        self.YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
+        self.YDL_OPTIONS = {'format': 'bestaudio', 'audio-quality' : '0', 'noplaylist':'True'}
         self.FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
         self.vc = None
