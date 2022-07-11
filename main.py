@@ -24,14 +24,14 @@ async def on_ready():
 @client.command()
 async def unload(ctx, extension):
   client.unload_extension(f'cogs.{extension}')
-  print(f'{extension} successfully unloaded')
+  await ctx.send(f'{extension} successfully unloaded')
 
 # cog reloader command, unload then load extenion
 @client.command()
 async def reload(ctx, extension):
   client.unload_extension(f'cogs.{extension}')
   client.load_extension(f'cogs.{extension}')
-  print(f'{extension} successfully re-loaded')
+  await ctx.send(f'{extension} successfully re-loaded')
 
   
 # loads each cog class as a cog
