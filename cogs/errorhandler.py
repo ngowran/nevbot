@@ -19,6 +19,8 @@ class ErrorHandler(commands.Cog):
       await ctx.send("Please enter an appropriate argument type :)")
     elif isinstance(error, commands.MissingAnyRole):
       await ctx.send("Sorry, you don't have the correct permissions to do that! :)")
+    elif isinstance(error, commands.CommandOnCooldown):
+      await ctx.send(f"Try again in {error.retry_after:.2f}s.")
     #else:
       #await ctx.send(f"{error}. Please try again :) {ctx.message.author.mention}.")
 
