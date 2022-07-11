@@ -14,7 +14,7 @@ class ErrorHandler(commands.Cog):
       await ctx.send("Please enter an existing argument, can be found via !help :)")
     #OR send message if the command is not found
     elif isinstance(error, commands.CommandNotFound):
-      await ctx.send("Please enter a vaild command :)") 
+      await ctx.send("Please enter a valid command :)") 
     elif isinstance(error, commands.BadArgument):
       await ctx.send("Please enter an appropriate argument type :)")
     elif isinstance(error, commands.MissingAnyRole):

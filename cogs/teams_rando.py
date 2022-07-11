@@ -53,7 +53,7 @@ class teams_rando(commands.Cog):
     else:
       await ctx.send("No values currently exist.")
   
-  @commands.command(name="tmake", help="Makes teams.")
+  @commands.command(name="tmake", aliases=["maket", "teams"], help="Makes teams.")
   async def teams(self, ctx):
     self.teams.clear()
     hoi_list = []
@@ -76,10 +76,34 @@ class teams_rando(commands.Cog):
     self.reset()
     await ctx.send(f"The teams have been reset {self.teams}")
 
-  @commands.command(name="tremove", help="Remove specific team.")
+  @commands.command(name="tremove", aliases=["rmplayer", "removep", "removet"], help="Remove specific player.")
   async def tremove(self, ctx, arg):
     a = self.remove(arg)
-    await ctx.send(f"{a}")
+    await ctx.send(f"{a}.")
+
+  @commands.command(name="addallies", aliases=["addally", "adda"], help="Adds Hearts of Iron ally countries.")
+  async def adddallies(self, ctx):
+    if ["United Kingdom", "United States", "France", "Poland"] not in self.hoi_countries:
+      self.hoi_countries += ["United Kingdom", "United States", "France", "Poland"]
+      await ctx.send(f"Added United Kingdom, United States, France, Poland.")
+    else:
+      await ctx.send(f"Those teams have already been added.")
+
+  @commands.command(name="addaxis", help="Adds Hearts of Iron axis countries.")
+  async def addaxis(self, ctx):
+    if ["Germany", "Slovakia", "Italy", "Romania"] not in self.hoi_countries:
+      self.hoi_countries += ["Germany", "Slovakia", "Italy", "Romania"]
+      await ctx.send(f"Added Germany, Slovakia, Italy, Romania.")
+    else:
+      await ctx.send(f"Those teams have already been added.")
+
+  @commands.command(name="addcomitern", aliases=["addcomi", "addcommies"], help="Adds Hearts of Iron comitern countries.")
+  async def addcomitern(self, ctx):
+    if ["Soviet Union"] not in self.hoi_countries:
+      self.hoi_countries += ["Soviet Union"]
+      await ctx.send(f"Added Soviet Union.")
+    else:
+      await ctx.send(f"That country is already in the list.")
 
 
 #initalises the hoi cog/
