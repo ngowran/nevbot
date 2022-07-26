@@ -1,7 +1,6 @@
 # nevbot
-A music bot for discord.
+* A music and games bot for discord.
+* Python using Discord.py.
 
-With some other features and is coded in Python.
-
-Contributors:
+## Contributors
 Niamh Gowran, Kevin Tomescu, Alex Petrash
