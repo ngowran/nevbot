@@ -1,6 +1,7 @@
 # nevbot
 * A music and games bot for discord.
-* Python using Discord.py.
+* Requirements: discord, discord.py, youtube_dl, ffmpeg, Flask, PyNaCl 
+
 
 ## Contributors
 Niamh Gowran, Kevin Tomescu, Alex Petrash
